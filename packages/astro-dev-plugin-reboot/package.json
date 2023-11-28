@@ -4,7 +4,9 @@
   "private": false,
   "description": "Reboot your computer, right from the Astro dev overlay.",
   "scripts": {},
-  "keywords": [],
+  "keywords": [
+    "astro-integration"
+  ],
   "author": "Florian Lefebvre <contact@florian-lefebvre.dev>",
   "license": "MIT",
   "bugs": "https://github.com/florian-lefebvre/astro-dev-plugin-reboot/issues",
@@ -14,7 +16,7 @@
     "access": "public"
   },
   "exports": {
-    "./integration": "./integration.ts",
+    ".": "./integration.ts",
     "./plugin": "./plugin.ts"
   },
   "peerDependencies": {
