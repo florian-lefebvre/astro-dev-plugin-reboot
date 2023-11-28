@@ -1,0 +1,30 @@
+{
+  "name": "astro-dev-plugin-reboot",
+  "version": "0.0.0",
+  "private": false,
+  "description": "Reboot your computer, right from the Astro dev overlay.",
+  "scripts": {},
+  "keywords": [],
+  "author": "Florian Lefebvre <contact@florian-lefebvre.dev>",
+  "license": "MIT",
+  "bugs": "https://github.com/florian-lefebvre/astro-dev-plugin-reboot/issues",
+  "homepage": "https://github.com/florian-lefebvre/astro-dev-plugin-reboot",
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    "./integration": "./integration.ts",
+    "./plugin": "./plugin.ts"
+  },
+  "peerDependencies": {
+    "astro": "^3.6.2"
+  },
+  "dependencies": {
+    "@napi-rs/system-shutdown": "^1.0.0",
+    "astro": "^3.6.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0"
+  }
+}

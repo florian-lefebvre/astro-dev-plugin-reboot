@@ -8,6 +8,19 @@ importers:
 
   .: {}
 
+  packages/astro-dev-plugin-reboot:
+    dependencies:
+      '@napi-rs/system-shutdown':
+        specifier: ^1.0.0
+        version: 1.0.0
+      astro:
+        specifier: ^3.6.2
+        version: 3.6.2(@types/node@20.10.0)
+    devDependencies:
+      '@types/node':
+        specifier: ^20.10.0
+        version: 20.10.0
+
   playground:
     dependencies:
       '@astrojs/mdx':
@@ -21,7 +34,10 @@ importers:
         version: 3.0.3
       astro:
         specifier: ^3.6.2
-        version: 3.6.2
+        version: 3.6.2(@types/node@20.10.0)
+      astro-dev-plugin-reboot:
+        specifier: workspace:*
+        version: link:../packages/astro-dev-plugin-reboot
 
 packages:
 
@@ -47,7 +63,7 @@ packages:
       astro: ^3.0.0
     dependencies:
       '@astrojs/prism': 3.0.0
-      astro: 3.6.2
+      astro: 3.6.2(@types/node@20.10.0)
       github-slugger: 2.0.0
       import-meta-resolve: 3.1.1
       mdast-util-definitions: 6.0.0
@@ -74,7 +90,7 @@ packages:
       '@astrojs/markdown-remark': 3.5.0(astro@3.6.2)
       '@mdx-js/mdx': 2.3.0
       acorn: 8.11.2
-      astro: 3.6.2
+      astro: 3.6.2(@types/node@20.10.0)
       es-module-lexer: 1.4.1
       estree-util-visit: 1.2.1
       github-slugger: 2.0.0
@@ -804,6 +820,112 @@ packages:
       - supports-color
     dev: false
 
+  /@napi-rs/system-shutdown-darwin-arm64@1.0.0:
+    resolution: {integrity: sha512-Rzc5tX3Wv7MoibE4lgDTKwnVpaCl61Pe00iWHAZKzVU3+bwCIQhM0Fw/Cl1ji10qv77m/cxXS5d/4h30thxWEA==}
+    engines: {node: '>= 10'}
+    cpu: [arm64]
+    os: [darwin]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@napi-rs/system-shutdown-darwin-x64@1.0.0:
+    resolution: {integrity: sha512-wRFa8Ase3Ct5vezHLkOSdfdbuwrZhWXiGwOHbvtfSG9B3u1LzHZkNvRKO0crOE5LUQlNDdzGUtiL1qsByem6hA==}
+    engines: {node: '>= 10'}
+    cpu: [x64]
+    os: [darwin]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@napi-rs/system-shutdown-linux-arm-gnueabihf@1.0.0:
+    resolution: {integrity: sha512-0furk2X0TojqBinaJxJDYhTwZUlYFJCrVi7fgTZRuFoNwu4dpwk2qzo7QgqbyZkcoS++mhS19bSOfAR514IYyA==}
+    engines: {node: '>= 10'}
+    cpu: [arm]
+    os: [linux]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@napi-rs/system-shutdown-linux-arm64-gnu@1.0.0:
+    resolution: {integrity: sha512-eD6Y4HvCs+KS4/SAZHn3BFQWLguEiNo4zJDweYX4/Jaa2rWI5/zIRDNfCdzwGYxL2S269JV73j5fqhBO9CAwCg==}
+    engines: {node: '>= 10'}
+    cpu: [arm64]
+    os: [linux]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@napi-rs/system-shutdown-linux-arm64-musl@1.0.0:
+    resolution: {integrity: sha512-4mop/Y7Q/RBNh1sZHy7lEjEMwpxcqRw78cclfUkR6qc0wOblunjHJMOUMi1t2lDeeaRyip3Vs0wy1MVOsYux+A==}
+    engines: {node: '>= 10'}
+    cpu: [arm64]
+    os: [linux]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@napi-rs/system-shutdown-linux-x64-gnu@1.0.0:
+    resolution: {integrity: sha512-aUN5LYpj/JwJhaUJ2IDcSbrKE/U0a1bXzdhnt6rJ9K8ZpKPdPx9h+XnxrxZDA85GidUjVg4VnCg5z6VLT1Ak5A==}
+    engines: {node: '>= 10'}
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@napi-rs/system-shutdown-linux-x64-musl@1.0.0:
+    resolution: {integrity: sha512-L250XTSqD7LQjHDio8IwRQmAIdWNZZAKhpt6dHzJy8VN/p6Z8BKjbj0L6v+SyWyUYjDf5YxmNtmqFErW8CiMTQ==}
+    engines: {node: '>= 10'}
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@napi-rs/system-shutdown-win32-arm64-msvc@1.0.0:
+    resolution: {integrity: sha512-O/Kdn+Q+8wrwz8Q3UGMBqiPzpODXLS3hj51aNDWg6Kx+/CzmW/RsMnCXXs5onQrFixnTPywctgNNF3tHZlzWUg==}
+    engines: {node: '>= 10'}
+    cpu: [arm64]
+    os: [win32]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@napi-rs/system-shutdown-win32-ia32-msvc@1.0.0:
+    resolution: {integrity: sha512-yw5TbTu2XQAE4X04wrLGWGYLWPL6Xp0ZM1zYPaiaYXDdRbRz48Tn0JfOX/mTrSRgFs/kKtVyw79zifqJ6AEhlw==}
+    engines: {node: '>= 10'}
+    cpu: [ia32]
+    os: [win32]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@napi-rs/system-shutdown-win32-x64-msvc@1.0.0:
+    resolution: {integrity: sha512-MH3oHGgIgc5TidOqshk5WhnnsPZz5evoN77YMtZVEYTkeFnfzP825VSRqLXdfnRuwtVNd81dAgfe8Hw350PfnQ==}
+    engines: {node: '>= 10'}
+    cpu: [x64]
+    os: [win32]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@napi-rs/system-shutdown@1.0.0:
+    resolution: {integrity: sha512-BNetqgnICF9v/lJ0Nwnx7iY2Fqej8OQl43EUCjyTQlspzQdofUGZAv3fNl1ZxIheetaH3F3jKkMHNPCXYL1cKg==}
+    engines: {node: '>= 10'}
+    optionalDependencies:
+      '@napi-rs/system-shutdown-darwin-arm64': 1.0.0
+      '@napi-rs/system-shutdown-darwin-x64': 1.0.0
+      '@napi-rs/system-shutdown-linux-arm-gnueabihf': 1.0.0
+      '@napi-rs/system-shutdown-linux-arm64-gnu': 1.0.0
+      '@napi-rs/system-shutdown-linux-arm64-musl': 1.0.0
+      '@napi-rs/system-shutdown-linux-x64-gnu': 1.0.0
+      '@napi-rs/system-shutdown-linux-x64-musl': 1.0.0
+      '@napi-rs/system-shutdown-win32-arm64-msvc': 1.0.0
+      '@napi-rs/system-shutdown-win32-ia32-msvc': 1.0.0
+      '@napi-rs/system-shutdown-win32-x64-msvc': 1.0.0
+    dev: false
+
   /@nodelib/fs.scandir@2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
     engines: {node: '>= 8'}
@@ -918,6 +1040,11 @@ packages:
     resolution: {integrity: sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==}
     dev: false
 
+  /@types/node@20.10.0:
+    resolution: {integrity: sha512-D0WfRmU9TQ8I9PFx9Yc+EBHw+vSpIub4IDvQivcp26PtPrdMGAq5SDcpXEo/epqa/DXotVpekHiLNTg3iaKXBQ==}
+    dependencies:
+      undici-types: 5.26.5
+
   /@types/parse5@6.0.3:
     resolution: {integrity: sha512-SuT16Q1K51EAVPz1K29DJ/sXjhSQ0zjvsypYJ6tlwVsRV9jwW5Adq2ch8Dq8kDBCkYnELS7N7VNCSB5nC56t/g==}
     dev: false
@@ -925,7 +1052,7 @@ packages:
   /@types/sax@1.2.7:
     resolution: {integrity: sha512-rO73L89PJxeYM3s3pPPjiPgVVcymqU490g0YO5n5By0k2Erzj6tay/4lr1CHAAU4JyOWd1rpQ8bCf6cZfHU96A==}
     dependencies:
-      '@types/node': 17.0.45
+      '@types/node': 20.10.0
     dev: false
 
   /@types/unist@2.0.10:
@@ -1013,7 +1140,7 @@ packages:
     hasBin: true
     dev: false
 
-  /astro@3.6.2:
+  /astro@3.6.2(@types/node@20.10.0):
     resolution: {integrity: sha512-NV3kyYFs2PHoZIYRgGm67wiNR4TRd76pvC+By3ejr/bU0WlfJu+HWoY1crc0cQobwo3syCWhXVjcKJ2rzRoMsw==}
     engines: {node: '>=18.14.1', npm: '>=6.14.0'}
     hasBin: true
@@ -1071,7 +1198,7 @@ packages:
       tsconfck: 3.0.0
       unist-util-visit: 4.1.2
       vfile: 5.3.7
-      vite: 4.5.0
+      vite: 4.5.0(@types/node@20.10.0)
       vitefu: 0.2.5(vite@4.5.0)
       which-pm: 2.1.1
       yargs-parser: 21.1.1
@@ -3719,6 +3846,9 @@ packages:
     engines: {node: '>=12.20'}
     dev: false
 
+  /undici-types@5.26.5:
+    resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
+
   /unherit@3.0.1:
     resolution: {integrity: sha512-akOOQ/Yln8a2sgcLj4U0Jmx0R5jpIg2IUyRrWOzmEbjBtGzBdHtSeFKgoEcoH4KYIG/Pb8GQ/BwtYm0GCq1Sqg==}
     dev: false
@@ -3902,7 +4032,7 @@ packages:
       vfile-message: 4.0.2
     dev: false
 
-  /vite@4.5.0:
+  /vite@4.5.0(@types/node@20.10.0):
     resolution: {integrity: sha512-ulr8rNLA6rkyFAlVWw2q5YJ91v098AFQ2R0PRFwPzREXOUJQPtFUG0t+/ZikhaOCDqFoDhN6/v8Sq0o4araFAw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -3930,6 +4060,7 @@ packages:
       terser:
         optional: true
     dependencies:
+      '@types/node': 20.10.0
       esbuild: 0.18.20
       postcss: 8.4.31
       rollup: 3.29.4
@@ -3945,7 +4076,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.5.0
+      vite: 4.5.0(@types/node@20.10.0)
     dev: false
 
   /web-namespaces@2.0.1:

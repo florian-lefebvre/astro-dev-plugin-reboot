@@ -1,10 +1,13 @@
-import { defineConfig } from 'astro/config';
-import mdx from '@astrojs/mdx';
-
-import sitemap from '@astrojs/sitemap';
+import { defineConfig } from "astro/config";
+import mdx from "@astrojs/mdx";
+import sitemap from "@astrojs/sitemap";
+import AstroDevPluginRebootIntegration from "astro-dev-plugin-reboot/integration";
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://example.com',
-	integrations: [mdx(), sitemap()],
+  site: "https://example.com",
+  integrations: [mdx(), sitemap(), AstroDevPluginRebootIntegration()],
+  experimental: {
+    devOverlay: true,
+  },
 });
