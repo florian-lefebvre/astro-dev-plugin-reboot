@@ -1,6 +1,6 @@
 {
   "name": "astro-dev-plugin-reboot",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": false,
   "description": "Reboot your computer, right from the Astro dev overlay.",
   "scripts": {},
